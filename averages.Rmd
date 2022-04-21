@@ -11,13 +11,20 @@ output:
 
 ```{r include=T, eval = F, tidy = T}
 
-install.packages("renv")
+install.packages("renv", "readxl", "magrittr", "devtools", "dplyr")
+renv::restore()
+```
+
+```{r include=T, eval = F, tidy = T}
+
 knitr::opts_chunk$set(echo = TRUE)
-setwd("G:/Roberto-Angulo/script for average")
+
+#setwd("G:/Roberto-Angulo/script for average")
 
 renv::autoload()
 renv::activate()
 ```
+
 
 ```{r include=T, echo = T , eval = F, tidy = T}
 #use this to save changes. Do not use when loading the project
@@ -40,25 +47,24 @@ Exit file. Col 1= [(FolderA. filesame. col1) + (FolderB. filesame. col1)] /2
 **Exit file Co1 - 2.5 = ( 2 + 3) /2**
 :::
 
-+----------------------------+---------+---------+
-| Col1                       | Col2    | Col3    |
-+:==========================:+:=======:+:=======:+
-| ::: {style="color:red"}    | 3       | 9       |
-| [**2**]{style="col:green"} |         |         |
-| :::                        |         |         |
-+----------------------------+---------+---------+
-| 5                          | 1       | 7       |
-+----------------------------+---------+---------+
-| 7                          | 4       | 2       |
-+----------------------------+---------+---------+
++-------------------------+---------+---------+
+| Col1                    | Col2    | Col3    |
++:=======================:+:=======:+:=======:+
+| ::: {style="color:red"} |         |         |
+| [**2**]                 | 3       | 9       |
+|{style="col:green"}:::|  |         |         |  +-------------------------+---------+---------+
+| 5                       | 1       | 7       |
++-------------------------+---------+---------+
+| 7                       | 4       | 2       |
++-------------------------+---------+---------+
 
 : **FolderA-filesame**
 
 +-------------------------+---------+---------+
 | Col1                    | Col2    | Col3    |
 +:=======================:+:=======:+:=======:+
-| ::: {style="color:red"} | 4       | 8       |
-| **3**                   |         |         |
+| ::: {style="color:red"} |         |         |
+| **3**                   | 4       | 8       |
 | :::                     |         |         |
 +-------------------------+---------+---------+
 | 4                       | 2       | 8       |
