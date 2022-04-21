@@ -11,8 +11,8 @@ output:
 
 ```{r include=T, eval = F, tidy = T}
 
-knitr::opts_chunk$set(echo = TRUE)
 install.packages("renv")
+knitr::opts_chunk$set(echo = TRUE)
 setwd("G:/Roberto-Angulo/script for average")
 
 renv::autoload()
